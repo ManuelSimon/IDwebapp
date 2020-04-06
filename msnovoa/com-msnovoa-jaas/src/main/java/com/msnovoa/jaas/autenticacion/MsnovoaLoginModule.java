@@ -49,8 +49,8 @@ public class MsnovoaLoginModule implements LoginModule {
 			// It can be a Database, an external LDAP, a Web Service, etc.
 			// For this tutorial we are just checking if user is "user123" and
 			// password is "pass123"
-			if (name != null && name.equals("user123") && password != null
-					&& password.equals("pass123")) {
+			if (name != null && name.equals("admin") && password != null
+					&& password.equals("admin")) {
 				login = name;
 				userGroups = new ArrayList<String>();
 				userGroups.add("admin");
