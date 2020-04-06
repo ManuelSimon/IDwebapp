@@ -53,7 +53,7 @@ public class MsnovoaLoginModule implements LoginModule {
 					&& password.equals("admin")) {
 				login = name;
 				userGroups = new ArrayList<String>();
-				userGroups.add("admin");
+				userGroups.add("R3");
 				return true;
 			}
 
@@ -91,6 +91,7 @@ public class MsnovoaLoginModule implements LoginModule {
 
 	@Override
 	public boolean logout() throws LoginException {
+		System.out.println("LLAMADO LOGOUT - ELIMINANDO PRINCIPALS...");
 		subject.getPrincipals().remove(msnovoaUserPrincipal);
 		subject.getPrincipals().remove(msnovoaRolePrincipal);
 		return true;

@@ -7,9 +7,11 @@
 
 	<display-name>ID webapp by msnovoa</display-name>
 
+
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+
 
 	<login-config>
 		<auth-method>FORM</auth-method>
@@ -19,17 +21,118 @@
 		</form-login-config>
 	</login-config>
 
+
+	<error-page>
+		<error-code>403</error-code>
+		<location>/403.jsp</location>
+	</error-page>
+
+
 	<security-role>
-		<role-name>admin</role-name>
+		<role-name>R1</role-name>
 	</security-role>
+
+	<security-role>
+		<role-name>R2</role-name>
+	</security-role>
+
+	<security-role>
+		<role-name>R3</role-name>
+	</security-role>
+
+	<security-role>
+		<role-name>R4</role-name>
+	</security-role>
+
+	<security-role>
+		<role-name>R5</role-name>
+	</security-role>
+
 
 	<security-constraint>
 		<web-resource-collection>
-			<web-resource-name>Admin</web-resource-name>
-			<url-pattern>/admin/*</url-pattern>
+			<web-resource-name>Gestión de nóminas</web-resource-name>
+			<url-pattern>/secure/nominas/gestion_nominas.jsp</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
-			<role-name>admin</role-name>
+			<role-name>R3</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Gestión de trabajadores</web-resource-name>
+			<url-pattern>/secure/nominas/gestion_trabajadores.jsp</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>R3</role-name>
+			<role-name>R5</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Autorizar compras</web-resource-name>
+			<url-pattern>/secure/compras/autorizar_compras.jsp</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>R1</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Gestión de compras</web-resource-name>
+			<url-pattern>/secure/compras/gestion_compras.jsp</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>R4</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Gestión de proveedores</web-resource-name>
+			<url-pattern>/secure/compras/gestion_proveedores.jsp</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>R4</role-name>
+			<role-name>R5</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Ventas</web-resource-name>
+			<url-pattern>/secure/ventas/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>R2</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Gestión de presupuestos</web-resource-name>
+			<url-pattern>/secure/ventas/gestion_presupuestos.jsp</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>R2</role-name>
+			<role-name>R5</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Menú</web-resource-name>
+			<url-pattern>/secure/menu.jsp</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>R1</role-name>
+			<role-name>R2</role-name>
+			<role-name>R3</role-name>
+			<role-name>R4</role-name>
+			<role-name>R5</role-name>
 		</auth-constraint>
 	</security-constraint>
 

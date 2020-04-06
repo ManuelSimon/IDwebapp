@@ -23,7 +23,7 @@ public class MsnovoaLogoutServlet extends HttpServlet {
         // Since the user is now logged out the
         // authentication form will be shown
         response.sendRedirect(request.getContextPath()
-                + "/admin/admin.jsp");
+                + "/index.jsp");
 
     }
 }
