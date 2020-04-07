@@ -15,6 +15,17 @@
         }
     }
     String userRolesString = String.join(", ", userRoles);
+
+    String[] rolesGestionPresupuestos = {"R2", "R5"};
+
+    String rGestionNominas = (userRolesString.contains("R3")) ? "✔️" : "❌";
+    String rGestionTrabajadores = (userRolesString.contains("R3") || userRolesString.contains("R5")) ? "✔️" : "❌";
+    String rAutorizarCompras = (userRolesString.contains("R1")) ? "✔️" : "❌";
+    String rGestionCompras = (userRolesString.contains("R4")) ? "✔️" : "❌";
+    String rGestionProveedores = (userRolesString.contains("R4") || userRolesString.contains("R5")) ? "✔️" : "❌";
+    String rGestionClientes = (userRolesString.contains("R2")) ? "✔️" : "❌";
+    String rGestionFacturas = (userRolesString.contains("R2")) ? "✔️" : "❌";
+    String rGestionPresupuestos = (userRolesString.contains("R2") || userRolesString.contains("R5")) ? "✔️" : "❌";
 %>
 
 <html>
@@ -28,6 +39,7 @@
 
     <h2>¡Hola, <%= msnovoaUserPrincipal.getName() %>!</h2>
 
+
     <hr>
     <h2>Información del usuario:</h2>
     <p><b>Nombre de usuario:</b> <%= msnovoaUserPrincipal.getName() %></p>
@@ -39,19 +51,19 @@
     <h2>Menú:</h2>
 
     <h3>Módulo Ventas</h3></td>
-    <p><a href="ventas/gestion_clientes.jsp">Operación: gestionar clientes</a></p>
-    <p><a href="ventas/gestion_presupuestos.jsp">Operación: gestionar presupuestos</a></p>
-    <p><a href="ventas/gestion_facturas.jsp">Operación: gestionar facturas</a></p>
+    <p><%= rGestionClientes %> <a href="ventas/gestion_clientes.jsp">Operación: gestionar clientes</a></p>
+    <p><%= rGestionPresupuestos %> <a href="ventas/gestion_presupuestos.jsp">Operación: gestionar presupuestos</a></p>
+    <p><%= rGestionFacturas %> <a href="ventas/gestion_facturas.jsp">Operación: gestionar facturas</a></p>
 
     <h3>Módulo Compras</h3></td>
-    <p><a href="compras/gestion_proveedores.jsp">Operación: gestionar proveedores</a></p>
-    <p><a href="compras/gestion_compras.jsp">Operación: gestionar compras</a></p>
-    <p><a href="compras/autorizar_compras.jsp">Operación: autorizar compras</a></p>
+    <p><%= rGestionProveedores %> <a href="compras/gestion_proveedores.jsp">Operación: gestionar proveedores</a></p>
+    <p><%= rGestionCompras %> <a href="compras/gestion_compras.jsp">Operación: gestionar compras</a></p>
+    <p><%= rAutorizarCompras %> <a href="compras/autorizar_compras.jsp">Operación: autorizar compras</a></p>
 
 
     <h3>Módulo Nóminas</h3></td>
-    <p><a href="nominas/gestion_trabajadores.jsp">Operación: gestionar trabajadores</a></p>
-    <p><a href="nominas/gestion_nominas.jsp">Operación: gestionar nóminas</a></p>
+    <p><%= rGestionTrabajadores %> <a href="nominas/gestion_trabajadores.jsp">Operación: gestionar trabajadores</a></p>
+    <p><%= rGestionNominas %> <a href="nominas/gestion_nominas.jsp">Operación: gestionar nóminas</a></p>
 
     <hr>
     <h2>¿Deseas irte ya?</h2>
