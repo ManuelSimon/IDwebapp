@@ -10,6 +10,6 @@
     <h1>Sistema de Gestión - Compras</h1>
 
     <p>Gestionar proveedores</p>
-    <p><a href='<%= response.encodeURL("../menu.jsp") %>'>back</a></p>
+    <p><a href='<%= response.encodeURL("../menu.jsp") %>'>Volver</a></p>
 </body>
 </html>

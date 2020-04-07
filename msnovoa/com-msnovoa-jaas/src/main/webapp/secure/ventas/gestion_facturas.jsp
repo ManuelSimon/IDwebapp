@@ -10,6 +10,6 @@
     <h1>Sistema de Gestión - Ventas</h1>
 
     <p>Gestionar facturas</p>
-    <p><a href='<%= response.encodeURL("../menu.jsp") %>'>back</a></p>
+    <p><a href='<%= response.encodeURL("../menu.jsp") %>'>Volver</a></p>
 </body>
 </html>

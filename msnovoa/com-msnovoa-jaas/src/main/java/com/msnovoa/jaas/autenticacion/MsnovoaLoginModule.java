@@ -3,17 +3,11 @@ package com.msnovoa.jaas.autenticacion;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.security.auth.Subject;
-import javax.security.auth.callback.Callback;
-import javax.security.auth.callback.CallbackHandler;
-import javax.security.auth.callback.NameCallback;
-import javax.security.auth.callback.PasswordCallback;
-import javax.security.auth.callback.UnsupportedCallbackException;
-import javax.security.auth.login.FailedLoginException;
+import javax.security.auth.callback.*;
 import javax.security.auth.login.LoginException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -28,12 +22,11 @@ public class MsnovoaLoginModule implements javax.security.auth.spi.LoginModule {
     /*---- VARIABLES ----*/
     private Subject subject;
     private CallbackHandler callbackHandler;
-    private Map sharedState;
-    private Map options;
     private MsnovoaUserPrincipal msnovoaUserPrincipal;
     private String userLogin;
     private List<String> userRoles;
-
+    private Map sharedState;
+    private Map options;
 
     private boolean succeeded = false;
 
@@ -71,7 +64,7 @@ public class MsnovoaLoginModule implements javax.security.auth.spi.LoginModule {
         this.sharedState = sharedState;
         this.options = options;
         this.succeeded = false;
-        System.out.println("Valor de testOption: " + (String) options.get("testOption"));
+        //System.out.println("Valor de testOption: " + (String) options.get("testOption"));
     }
 
     /**

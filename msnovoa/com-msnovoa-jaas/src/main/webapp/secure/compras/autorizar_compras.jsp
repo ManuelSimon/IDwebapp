@@ -10,6 +10,6 @@
     <h1>Sistema de Gestión - Compras</h1>
 
     <p>Autorizar compras</p>
-    <p><a href='<%= response.encodeURL("../menu.jsp") %>'>back</a></p>
+    <p><a href='<%= response.encodeURL("../menu.jsp") %>'>Volver</a></p>
 </body>
 </html>

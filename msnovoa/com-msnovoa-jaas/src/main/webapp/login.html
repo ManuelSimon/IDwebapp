@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Login</title>
+    <title>Login</title>
+	<meta charset="UTF-8">
 </head>
 <body>
-	<form method=post action="j_security_check" >
-		<p>
-			<span>Username:</span>
-			<br />
-			<input type="text"  name= "j_username" >
-		</p>
-		<p>
-			<span>Password:</span>
-			<br />
-			<input type="password"  name= "j_password" >
-		</p>
-		<p>
-			<input type="submit" value="Login">
-		</p>
-	</form>
+<h1>Inicio de sesión en el sistema</h1>
+
+<h3>Para poder utilizar las funcionalidades de esta aplicación web, primero debes iniciar sesión en el sistema.</h3>
+
+<form method=post action="j_security_check">
+    <p>
+		<span><b>Nombre de usuario:</b></span>
+        <br/>
+        <input type="text" name="j_username">
+    </p>
+    <p>
+        <span><b>Contraseña:</b></span>
+        <br/>
+        <input type="password" name="j_password">
+    </p>
+    <p>
+        <input type="submit" value="Login">
+    </p>
+</form>
 </body>

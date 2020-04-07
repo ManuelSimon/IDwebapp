@@ -10,7 +10,7 @@
     <h1>Sistema de Gestión - Nóminas</h1>
 
     <p>Gestionar nóminas</p>
-    <p><a href='<%= response.encodeURL("../menu.jsp") %>'>back</a></p>
+    <p><a href='<%= response.encodeURL("../menu.jsp") %>'>Volver</a></p>
 </div>
 </body>
 </html>

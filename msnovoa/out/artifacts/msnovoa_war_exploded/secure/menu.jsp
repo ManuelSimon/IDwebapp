@@ -1,7 +1,5 @@
 <%@ page import="com.msnovoa.jaas.autenticacion.MsnovoaUserPrincipal" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Arrays" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
@@ -16,8 +14,6 @@
     }
     String userRolesString = String.join(", ", userRoles);
 
-    String[] rolesGestionPresupuestos = {"R2", "R5"};
-
     String rGestionNominas = (userRolesString.contains("R3")) ? "✔️" : "❌";
     String rGestionTrabajadores = (userRolesString.contains("R3") || userRolesString.contains("R5")) ? "✔️" : "❌";
     String rAutorizarCompras = (userRolesString.contains("R1")) ? "✔️" : "❌";
@@ -31,7 +27,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Home Page</title>
+    <title>Menú - Sistema de Gestión</title>
 </head>
 <body>
 <div id="content">
