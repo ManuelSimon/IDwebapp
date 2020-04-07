@@ -7,5 +7,5 @@
 <body>
 <h1>Permiso denegado</h1>
 <p>Lo siento, nuestro sistema no detecta que tengas permiso para acceder a esta sección de la web.</p>
-<p><a href="${pageContext.request.contextPath}/index.jsp">Volver al inicio.</a></p>
+<p><a href="${pageContext.request.contextPath}/index.jsp">Volver al inicio</a></p>
 </body>

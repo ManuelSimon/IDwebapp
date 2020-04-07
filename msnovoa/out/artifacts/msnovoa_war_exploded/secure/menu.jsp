@@ -1,7 +1,20 @@
+<%@ page import="com.msnovoa.jaas.autenticacion.MsnovoaUserPrincipal" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Arrays" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
-    String nombreUsuario = request.getRemoteUser();
+    MsnovoaUserPrincipal msnovoaUserPrincipal = (MsnovoaUserPrincipal) request.getUserPrincipal();
+
+    String[] allRoles = {"R1","R2","R3", "R4", "R5"};
+    ArrayList userRoles = new ArrayList(allRoles.length);
+    for(String role : allRoles) {
+        if(request.isUserInRole(role)) {
+            userRoles.add(role);
+        }
+    }
+    String userRolesString = String.join(", ", userRoles);
 %>
 
 <html>
@@ -13,7 +26,14 @@
 <div id="content">
     <h1>Sistema de Gestión</h1>
 
-    <h2>¡Hola, <%= nombreUsuario %>! Este es el menu de la aplicación:</h2>
+    <h2>¡Hola, <%= msnovoaUserPrincipal.getName() %>!</h2>
+
+    <hr>
+    <h2>Información del usuario:</h2>
+    <p><b>Nombre de usuario:</b> <%= msnovoaUserPrincipal.getName() %></p>
+    <p><b>Nombre completo:</b> <%= msnovoaUserPrincipal.getRealName() %></p>
+    <p><b>Posición en la empresa:</b> <%= msnovoaUserPrincipal.getPosition() %></p>
+    <p><b>Roles:</b> <%= userRolesString %></p>
 
     <hr>
     <h2>Menú:</h2>

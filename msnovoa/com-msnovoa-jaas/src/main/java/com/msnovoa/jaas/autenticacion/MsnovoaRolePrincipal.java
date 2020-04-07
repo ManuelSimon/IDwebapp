@@ -3,21 +3,19 @@ package com.msnovoa.jaas.autenticacion;
 import java.security.Principal;
 
 public class MsnovoaRolePrincipal implements Principal {
-	
-	private String name;
-	
-	public MsnovoaRolePrincipal(String name) {
+
+	/*---- ATRIBUTOS ----*/
+	private final String groupName;
+
+	/*---- CONSTRUCTOR ----*/
+	public MsnovoaRolePrincipal(String groupName) {
 		super();
-		this.name = name;
+		this.groupName = groupName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
+	/*---- GETTETS - SETTERS ----*/
 	@Override
-	public String getName() {
-		return name;
+	public String getName(){
+		return this.groupName;
 	}
-
 }

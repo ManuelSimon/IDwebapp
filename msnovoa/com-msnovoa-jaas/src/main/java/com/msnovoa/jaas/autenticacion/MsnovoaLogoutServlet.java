@@ -17,7 +17,8 @@ public class MsnovoaLogoutServlet extends HttpServlet {
 
         // Invalidate current HTTP session.
         // Will call JAAS LoginModule logout() method
-        request.getSession().invalidate();
+        request.logout();
+        //request.getSession().invalidate();
 
         // Redirect the user to the secure web page.
         // Since the user is now logged out the

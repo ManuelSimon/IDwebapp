@@ -1,0 +1,5 @@
+joel;f56452b8fb8cbe0914182b15d731538a;Joel Fleischman;Gerente;R1,R2,R3,R4;TkfDE8gxFg
+maggie;edd01fb477170327e50189d3fe6ef89f;Maggie O'Connell;Jefe de Ventas;R2;iqgCl6MhfS
+chris;9d45b1382112ac06ece6e66f04bceba6;Chris Stevens;Jefe de Personal;R3;Y98BQfQGfE
+maurice;a0af04756590160bb4b388bd7f82e966;Maurice Minnifield;Jefe de Compras;R4;zf3sKjFdXJ
+shelly;949ed66f43257ff86cdb2e45c85dd6b3;Shelly Tambo;Auditor;R5;GRLl9bbSmV
