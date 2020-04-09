@@ -13,8 +13,9 @@ Dentro de esta aplicación se gestionará tanto la autenticación como la autori
 ##  Índice
 
 - [Contexto de la estructura de la empresa que utiliza esta aplicación](#Contexto-de-la-estructura-de-la-empresa-que-utiliza-esta-aplicación)
-- [Proceso de autenticación](#proceso-de-autenticación)
-- [Proceso de autorización](#proceso-de-autorización)
+- [Estructura del proyecto](#Estructura-del-proyecto)
+- [Proceso de autenticación](#Proceso-de-autenticación)
+- [Proceso de autorización](#Proceso-de-autorización)
 - [Código web](#Código-web)
 - [Galería](#Galería)  
 
@@ -66,6 +67,14 @@ Para compreender el funcionamiento de la aplicación en el momento de su ejecuci
 | Gestión de clientes  | R2  |
 | Gestión de facturas  | R2  |
 | Gestión de presupuestos  | R2, R5  |
+
+---
+
+## Estructura del proyecto
+
+El proyecto está organizado siguiendo la siguiente estructura de archivos:
+
+![galeria](Images/estructura.png)
 
 ---
 
