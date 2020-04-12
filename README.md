@@ -14,6 +14,7 @@ Dentro de esta aplicación se gestionará tanto la autenticación como la autori
 
 - [Contexto de la estructura de la empresa que utiliza esta aplicación](#Contexto-de-la-estructura-de-la-empresa-que-utiliza-esta-aplicación)
 - [Estructura del proyecto](#Estructura-del-proyecto)
+- [Despliegue de la aplicación](#Despliegue-de-la-aplicación)
 - [Proceso de autenticación](#Proceso-de-autenticación)
 - [Proceso de autorización](#Proceso-de-autorización)
 - [Código web](#Código-web)
@@ -93,8 +94,6 @@ echo "$JAVA_OPTS"
 7. Paramos el servidor Tomcat en caso de que estuviera funcionando: service tomcat stop
 8. Inicializamos nuevamente el servidor, para que despliegue el fichero war (atención a los permisos), dejando accesible nuestra aplicación. Para ello llamaremos al comando de inicialización de catalina, modificado previamente: /opt/tomcat/bin/catalina.sh start
 9. Hecho esto, la aplicación está lista para ser usada bajo la dirección: http://localhost:8080/msnovoa/
-
-
 
 **Otra información:** Dentro de la carpeta msnovoa dentro del directorio raíz, se encuentra todo el código fuente original utilizado en la aplicación. Es posible seguir un proceso "tradicional" de compilado de estos ficheros .java para la obtención de .class y posteriormente situarlos en el directorio de aplicaciones Tomcat, en lugar de aplicar directamente el .war. Sin embargo, este método no se explicará al resultar más propenso a errores en el proceso de compilado y ser más costoso en tiempo.
 
