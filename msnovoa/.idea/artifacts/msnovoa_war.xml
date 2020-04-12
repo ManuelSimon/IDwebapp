@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="msnovoa:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/msnovoa_war</output-path>
+    <root id="archive" name="msnovoa.war">
+      <element id="artifact" artifact-name="msnovoa:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -78,6 +78,28 @@ El proyecto está organizado siguiendo la siguiente estructura de archivos:
 
 ---
 
+## Despliegue de la aplicación
+
+Se indicarán en esta sección los pasos a seguir para conseguir un correcto despliegue de la aplicación web a partir del código fuente. Éstos son:
+
+1. Se facilita en el directorio raíz un fichero denominado msnovoa.war. Este fichero contiene en su interior todos los archivos y directorios precisos para que nuestra aplicación web funcione. Simplemente copiaremos este archivo en el directorio de las aplicaciones web de Tomcat (/opt/tomcat/webapps/msnovoa.war)
+2. Automáticamente, en el momento de su ejecución, Tomcat se encargará de descomprimir este  fichero .war en el directorio de aplicaciones, dando como resultado al árbol de archivos necesarios para el funcionamiento de esta aplicación web, sin necesidad de más intervención.
+3. **OPCIONAL:** Es posible que en el proceso de descompresión los ficheros resultantes tengan unos permisos de ejecución diferentes a los actualmente configurados en el servidor web. Esto dependerá de la configuración personal de cada uno, por lo que en caso de que esto ocurra, simplemente dar los permisos necesarios, en función de vuestra configuración, al directorio resultante y todos los ficheros de su interior.
+4. Ahora que tenemos la aplicación web disponible en el directorio de aplicaciones, debemos añadir el fichero jaas.config (disponible en la raíz) en el directorio de configuración de Tomcat (/opt/tomcat/cong). Atención nuevamente con los permisos.
+5. Para que el proceso de Autenticación sea exitoso, debemos indicar mediante una variable la ubicación de este fichero jaas.conf. Para ello, accederemos al fichero de inicialización de catalina (/opt/tomcat/bin/catalina/sh) y añadiremos la siguiente línea justo al final:
+JAVA_OPTS="$JAVA_OPTS -Djava.security.auth.login.config==$CATALINA_BASE/conf/jaas.config"
+6. **OPCIONAL**: Podemos indicar en el mismo fichero catalina.sh otra línea para comprobar que los cambios fueron exitosos:
+echo "$JAVA_OPTS"
+7. Paramos el servidor Tomcat en caso de que estuviera funcionando: service tomcat stop
+8. Inicializamos nuevamente el servidor, para que despliegue el fichero war (atención a los permisos), dejando accesible nuestra aplicación. Para ello llamaremos al comando de inicialización de catalina, modificado previamente: /opt/tomcat/bin/catalina.sh start
+9. Hecho esto, la aplicación está lista para ser usada bajo la dirección: http://localhost:8080/msnovoa/
+
+
+
+**Otra información:** Dentro de la carpeta msnovoa dentro del directorio raíz, se encuentra todo el código fuente original utilizado en la aplicación. Es posible seguir un proceso "tradicional" de compilado de estos ficheros .java para la obtención de .class y posteriormente situarlos en el directorio de aplicaciones Tomcat, en lugar de aplicar directamente el .war. Sin embargo, este método no se explicará al resultar más propenso a errores en el proceso de compilado y ser más costoso en tiempo.
+
+---
+
 ## Proceso de autenticación
 
 En esta sección del documento se indicará el proceso de autenticación realizado por la aplicación. Esta explicación de realizará de manera sencilla ya que la información existente en los vídeos amplían los datos que aquí se muestran.
